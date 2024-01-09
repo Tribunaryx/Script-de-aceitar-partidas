@@ -1,0 +1,20 @@
+#Localizando imagem
+import pyautogui
+
+def position():
+    pos = pyautogui.locateCenterOnScreen('aceitar.png', confidence=0.7)
+    if pos != None:
+        pyautogui.click(pos)
+        print('Encontrado')
+        return True
+    else:
+        print('Não encontrado')
+        return False
+#Loop
+def looping():
+    while True:
+        if position():
+            print('Partida Aceita')
+            break        
+#exe
+looping()
